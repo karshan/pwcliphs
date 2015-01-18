@@ -1,0 +1,10 @@
+#!/bin/sh
+PASS=$(pwcliphs $DIR/key.gpg $DIR/conf/$(ls $DIR/conf | dmenu))
+echo $PASS | xclip -selection clipboard
+if [ $PASS == "NotEnoughEntropy" ]; then
+  notify-send -t 5 -a "pwclip" "failed"
+else
+  notify-send -t 5 -a "pwclip" "copied"
+  sleep 5
+  echo -n "" | xclip -selection clipboard
+fi
