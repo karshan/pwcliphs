@@ -2,6 +2,8 @@
 ---------
 [pwclip](https://github.com/davidlazar/pwclip) in Haskell
 
+Requirements: My fork of [DRBG](https://github.com/karshan/DRBG)
+
 Usage: pwcliphs key.pgp passwordfile
 
 passwordfile:
